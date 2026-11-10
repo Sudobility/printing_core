@@ -1,0 +1,92 @@
+{
+  "name": "@sudobility/printing_core",
+  "version": "0.0.1",
+  "description": "Platform-agnostic printing primitives (paper, geometry, options) shared by web and RN",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "react-native": "dist/rn/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/fix-esm-imports.mjs",
+    "build:watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test:unit": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ci": "vitest run --coverage",
+    "prepublishOnly": "bun run clean && bun run test:unit && bun run build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
+  },
+  "keywords": [
+    "dependency-injection",
+    "react",
+    "react-native",
+    "typescript",
+    "platform-agnostic",
+    "interfaces"
+  ],
+  "author": "johnqh",
+  "devDependencies": {
+    "@eslint/js": "~10.0.1",
+    "@types/node": "~26.6.5",
+    "@typescript-eslint/eslint-plugin": "~8.72.0",
+    "@typescript-eslint/parser": "~8.72.0",
+    "@vitest/coverage-v8": "~4.1.12",
+    "eslint": "~10.13.0",
+    "eslint-config-prettier": "~10.1.8",
+    "eslint-plugin-import-x": "~4.17.1",
+    "eslint-plugin-prettier": "~5.5.7",
+    "prettier": "~3.9.10",
+    "typescript": "~6.0.3",
+    "vitest": "~4.1.12"
+  },
+  "peerDependencies": {},
+  "peerDependenciesMeta": {
+    "react-native": {
+      "optional": true
+    },
+    "@react-native-async-storage/async-storage": {
+      "optional": true
+    },
+    "@react-native-community/netinfo": {
+      "optional": true
+    },
+    "@notifee/react-native": {
+      "optional": true
+    },
+    "firebase": {
+      "optional": true
+    },
+    "@react-native-firebase/app": {
+      "optional": true
+    },
+    "@react-native-firebase/analytics": {
+      "optional": true
+    },
+    "@react-native-firebase/messaging": {
+      "optional": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sudobility/di.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "BUSL-1.1"
+}
