@@ -15,13 +15,10 @@ export default defineConfig({
         '**/*.d.ts',
         '**/*.config.*',
         '**/index.ts',
-        // Interface-only files that generate no executable code
-        'src/env.ts',
-        'src/navigation/navigation.ts',
-        'src/notification/notification.ts',
-        'src/storage/storage.ts',
-        'src/network/network.interface.ts',
-        'src/analytics/analytics.interface.ts',
+        // React binding: thin glue over the pure helpers, which are covered
+        // directly; testing it would pull in a DOM renderer this node-env
+        // package does not need.
+        'src/react/**',
       ],
       thresholds: {
         global: {

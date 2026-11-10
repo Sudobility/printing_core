@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/printing_core",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Platform-agnostic printing primitives (paper, geometry, options) shared by web and RN",
   "type": "module",
   "main": "dist/index.js",
@@ -11,6 +11,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js",
+      "default": "./dist/react/index.js"
     }
   },
   "files": [
@@ -43,6 +48,7 @@
   "devDependencies": {
     "@eslint/js": "~10.0.1",
     "@types/node": "~26.6.5",
+    "@types/react": "~19.3.0",
     "@typescript-eslint/eslint-plugin": "~8.72.0",
     "@typescript-eslint/parser": "~8.72.0",
     "@vitest/coverage-v8": "~4.1.12",
@@ -51,33 +57,15 @@
     "eslint-plugin-import-x": "~4.17.1",
     "eslint-plugin-prettier": "~5.5.7",
     "prettier": "~3.9.10",
+    "react": "^19.3.0",
     "typescript": "~6.0.3",
     "vitest": "~4.1.12"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
   "peerDependenciesMeta": {
-    "react-native": {
-      "optional": true
-    },
-    "@react-native-async-storage/async-storage": {
-      "optional": true
-    },
-    "@react-native-community/netinfo": {
-      "optional": true
-    },
-    "@notifee/react-native": {
-      "optional": true
-    },
-    "firebase": {
-      "optional": true
-    },
-    "@react-native-firebase/app": {
-      "optional": true
-    },
-    "@react-native-firebase/analytics": {
-      "optional": true
-    },
-    "@react-native-firebase/messaging": {
+    "react": {
       "optional": true
     }
   },
