@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/printing_core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Platform-agnostic printing primitives (paper, geometry, options) shared by web and RN",
   "type": "module",
   "main": "dist/index.js",
